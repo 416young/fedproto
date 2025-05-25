@@ -1,1 +1,8 @@
-# fedproto
+# 基于原型学习的联邦学习算法研究
+在联邦学习中，数据分布的非独立同分布性和客户端模型结构的异构性是影响全局模型泛化性能的关键挑战。本文复现了一种基于原型学习的联邦学习算法——FedProto。该方法通过在每轮训练中提取客户端的类原型，并在全局模型聚合阶段实现原型对齐，从而缓解因数据分布差异导致的模型更新方向偏移问题。实验采用MNIST与CIFAR-10两个典型图像分类数据集，在Dirichlet分布浓度参数为0.5的设置下，模拟高度异构的数据场景，对FedProto与传统联邦平均算法FedAvg进行系统对比。结果显示，FedProto在平均测试准确率、收敛速度和通信效率方面均优于FedAvg，表现出更强的泛化能力和鲁棒性。特别是在CIFAR-10任务中，FedProto在面对更复杂图像和更强异构性的挑战下仍保持稳定优异的性能，证明其在实际多样化联邦场景中的广泛适用性。
+
+In federated learning, the challenges of non-independent and identically distributed data and heterogeneous client model architectures significantly impact the generalization performance of the global model. This thesis replicates a prototype-based federated learning algorithm, FedProto. The method mitigates the issue of model update divergence caused by data distribution differences by extracting class-wise prototypes on each client during training and aligning these prototypes during the global aggregation phase. Experiments are conducted on two benchmark image classification datasets, MNIST and CIFAR-10, under a highly heterogeneous setting simulated by a Dirichlet distribution with a concentration parameter of 0.5. FedProto is systematically compared with the traditional federated averaging algorithm FedAvg. Results show that FedProto outperforms FedAvg in terms of average test accuracy, convergence speed, and communication efficiency, demonstrating stronger generalization and robustness. Notably, on the CIFAR-10 task, FedProto maintains stable and superior performance even under the challenges of more complex images and stronger heterogeneity, proving its broad applicability in real-world, diverse federated learning scenarios.
+
+
+### 对比实验：FedProto与FedAvg使用cifar-10数据集在数据非独立同分布情况下的表现对比实验
+对比试验代码：https://www.kaggle.com/code/yangziyi1/fedproto
